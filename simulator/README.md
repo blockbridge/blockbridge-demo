@@ -118,8 +118,8 @@ its volumes.
 Additionally, there are scripts which allow you to independently operate a
 single management node and single storage node. These may be used to operate
 independent nodes in a multi-host deployment. In addition there are scripts for
-turn-key setups comprised of one or three storage nodes. These scripts are
-intended for demonstration using a single host.
+turn-key setups comprised of a management node and one or three storage nodes.
+These scripts are intended for demonstration using a single host.
 
 ### How to get the scripts?
 
@@ -136,9 +136,9 @@ cd blockbridge-demo
 The easiest way to get started is to deploy the simulator with private
 container networking using one of the 'complete' setup scripts.
 
-    ./simulator/complete_one_node/run-private.sh
+    ./simulator/complete_two_node/run_private.sh
 
-The `complete_one_node` script launches a management node container,
+The `complete_two_node` script launches a management node container,
 links a storage node container to it, sets up a default device for
 storage, generates default user account credentials and prints out the
 summary of what happened to the container logs.
@@ -149,7 +149,7 @@ Yes!  If, say, you wanted to change the port to 4433 (from 443), start
 the simulator like this:
 
 ```bash
-BB_MN_SSL_PORT=4433 ./simulator/complete_one_node/run-private.sh
+BB_MN_SSL_PORT=4433 ./simulator/complete_two_node/run_private.sh
 ```
 
 ### A more flexible setup with public networking
@@ -160,17 +160,17 @@ accessible IP address to each container and open ports on the host that NAT to
 the containers. Each container that starts should be allocated and assigned an
 externally accessible IP address.
 
-Note that in a `complete_one_node` setup, you need only a single IP address
+Note that in a `complete_two_node` setup, you need only a single IP address
 because storage containers and management containers provide services on
 non-overlapping ports. Any single external address on the system may be used.
 
-Let's run the complete one-node setup again with public addresses. The IP
-addresses can be specified on teh command line, exported to the shell
+Let's run the complete two-node setup again with public addresses. The IP
+addresses can be specified on the command line, exported to the shell
 environment, or edited in the script directly.
 
 Here, start the nodes directly from the command line:
 
-    BB_MN_SIM_IP="172.16.5.17" BB_SN_SIM_IP="172.16.5.17" ./simulator/complete_one_node/run-public.sh
+    BB_MN_SIM_IP="172.16.5.17" BB_SN_SIM_IP="172.16.5.17" ./simulator/complete_two_node/run-public.sh
 
 and... Bob's your uncle.
 

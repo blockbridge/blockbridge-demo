@@ -32,7 +32,7 @@ With only one IP address on the host, the run script will auto-detect it and
 program things accordingly:
 
 ```
-$ ./simulator/complete_one_node/run-public.sh 
+$ ./simulator/complete_two_node/run_public.sh 
 Starting management node (using 172.16.5.193): 649050292d12e48c92f56a8bf8c3e97b248d9a5d33a5172a7b9cd8ac3f75f1a9
 Starting storage node (using 172.16.5.193): 3bf832073934857a18b38bf7d2f53d95424f6a7dee7ea8c9661dcc73cd5e8109
 ```
@@ -40,7 +40,7 @@ Starting storage node (using 172.16.5.193): 3bf832073934857a18b38bf7d2f53d95424f
 For private networking, the containers are linked through the Docker network:
 
 ```
-$ ./simulator/complete_one_node/run-private.sh 
+$ ./simulator/complete_two_node/run_private.sh 
 Starting management node: 13157c64db0175170ee2b83ae626ec36b444e48b8e24b9e5ebe06f4...
 Starting storage node: 9a42763757c06e275c03ed5f195c0cbbc43f7e7eeb4137e388057ff38d026b73
 ```
