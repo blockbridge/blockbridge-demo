@@ -20,7 +20,7 @@ docker run --name $VOL                                              \
            --privileged                                             \
            --detach                                                 \
            --volumes-from iscsid                                    \
-           --volume /proc/$(pgrep -f /usr/bin/docker)/ns:/ns-mnt    \
+           --volume /proc/$(pgrep -f "docker .*-d.*")/ns:/ns-mnt    \
            --volume /proc/1/ns:/ns-net                              \
            --volume /data/db                                        \
            blockbridge/autovol
