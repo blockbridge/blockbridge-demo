@@ -8,8 +8,8 @@ VAL=1
 if [ $# -ne 0 ]; then
     VAL=$1
 fi
-APP="mongo-app-$VAL"
-VOL="snappy-$VAL"
+APP="mongo-snap-app-$VAL"
+VOL="mongo-snap-vol-$VAL"
 
 # start Blockbridge persistent storage volume
 echo -n "Starting persistent storage container $VOL: "
