@@ -48,8 +48,6 @@ platforms:
 | CentosOS 7.1.1503  | 1.5.0-dev+     | included
 | Ubuntu 14.04       | 1.6.0+         | https://docs.docker.com/installation/ubuntulinux/
 | CoreOS 681+        | 1.6.0+         | included
-| RHEL 6.5+          | 1.6.0+         | https://docs.docker.com/installation/centos/
-| Centos 6.5+        | 1.6.0+         | https://docs.docker.com/installation/centos/
 | boot2docker 1.6.0+ | 1.6.0+         | included
 | kitematic 0.5.25+  | 1.6.0+         | included
 
