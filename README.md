@@ -108,3 +108,4 @@ no storage provisioned yet!
 * [Configure the simulator](simulator/README.md) with more storage nodes or
   different configurations.
 * [Explore the CLI tool](cli/README.md) running as a Docker container.
+* [Use docker volumes with the Blockbridge volume plugin for Docker](https://github.com/blockbridge/blockbridge-docker-volume)
