@@ -8,6 +8,7 @@ storage that operates as a programmable service. Blockbridge provides automatic
 encryption, secure deletion, quality of service, secure replication, transport
 security and data exfiltration detection on your choice of hardware/storage.
 
+
 ![Service view](simulator/tenant-vss.jpg)
 
 ## Installation
@@ -50,17 +51,10 @@ Starting storage node: 9a42763757c06e275c03ed5f195c0cbbc43f7e7eeb4137e388057ff38
 After the management node boots for the first time, it randomly generates a set
 of access credentials for both a storage administrator and a tenant user, then
 prints them to the container logs. You'll need these to manage the simulator.
-Retrieve them credentials now with the `docker logs bbsim-mn` command.
+Retrieve the credentials now with the `docker logs bbsim-mn` command.
 
 ```
 $ docker logs bbsim-mn
--- running in container
-Setting default management configuration...
-'/bb/etc/sim-mncfg.lua' -> '/bb/etc/mncfg.lua'
-Generating node TLS key and self-signed certificate: done.
-Starting Blockbridge simulator node:1
-...
-
 ==============================================
 Blockbridge simulator (container) has started.
 
@@ -82,6 +76,7 @@ running the management node. After accepting the certificate, sign in at the
 Blockbridge login prompt with the `system` account and its generated password
 from the `Admin password` line above.  The administrator view looks like this:
 
+
 ![Global view](simulator/infra-global.jpg)
 
 This is the **Global** section of the **Infrastructure** side of the web
@@ -97,6 +92,7 @@ account by selecting **User: system** from the top bar, then **Logout**.  Sign
 back in as the `block` user with the `User password` from the prior section.
 You'll see a screen like this:
 
+
 ![Global view](simulator/tenant-global.jpg)
 
 This is the **Global** section of the **Storage** side of the web application,
@@ -108,3 +104,4 @@ no storage provisioned yet!
 * [Configure the simulator](simulator/README.md) with more storage nodes or
   different configurations.
 * [Explore the CLI tool](cli/README.md) running as a Docker container.
+* [Use docker volumes with the Blockbridge volume plugin for Docker](https://github.com/blockbridge/blockbridge-docker-volume)
