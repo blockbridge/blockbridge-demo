@@ -11,10 +11,12 @@ UPDATERCD="/usr/sbin/update-rc.d"
 # disable via systemd
 function disable_systemd()
 {
-    sudo $SYSTEMCTL disable iscsid.service
     sudo $SYSTEMCTL disable iscsid.socket
-    sudo $SYSTEMCTL stop iscsid.service
+    sudo $SYSTEMCTL disable iscsiuio.socket
+    sudo $SYSTEMCTL disable iscsid.service
     sudo $SYSTEMCTL stop iscsid.socket
+    sudo $SYSTEMCTL stop iscsiuio.socket
+    sudo $SYSTEMCTL stop iscsid.service
 }
 
 # disable via chkconfig
@@ -38,12 +40,10 @@ function disable_rcd()
 # find best way to disable and disable it
 if [ -e $SYSTEMCTL ]; then
     disable_systemd
-fi
 
-if [ -e $CHKCONFIG ]; then
+elif [ -e $CHKCONFIG ]; then
     disable_chkconfig
-fi
 
-if [ -e $UPDATERCD ]; then
+elif [ -e $UPDATERCD ]; then
     disable_rcd
 fi
