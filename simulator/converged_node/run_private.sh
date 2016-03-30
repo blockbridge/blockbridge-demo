@@ -35,6 +35,7 @@ PARAMS=(--name "$BB_SIM_NAME"           \
         --ulimit memlock=-1             \
         --publish $BB_SSL_PORT:443      \
         --publish $BB_WEB_PORT:80       \
+        --expose 9999                   \
         --detach)
 
 echo -n "Starting converged node: "
